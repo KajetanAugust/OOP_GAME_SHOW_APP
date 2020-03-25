@@ -36,8 +36,31 @@ class Game {
     }
 
     getRandomPhrase(){
-        const phrases = this.phrases;
         return this.phrases[Math.floor(Math.random() * this.phrases.length )]
+    }
+
+    startGame() {
+        document.getElementById('overlay').style.display='none';
+        const randomPhrase = game.getRandomPhrase();
+        this.activePhrase = randomPhrase;
+        randomPhrase.addPhraseToDisplay();
+    }
+
+    checlForWin() {
+
+    }
+
+    removeLife() {
+
+    }
+
+    gameOver() {
+
+    }
+
+
+    handleInteraction() {
+
     }
 }
 
