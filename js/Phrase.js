@@ -39,7 +39,6 @@ class Phrase {
         for( let i = 0; i < phraseLetters.length; i++ ) {
             if(letter === phraseLetters[i].textContent) {
                 phraseLetters[i].className = 'letter show';
-
             }
         }
     }

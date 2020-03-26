@@ -47,28 +47,23 @@ class Game {
     }
 
     checkForWin() {
-        if(missed === 5){   // if the all hearts are lost the you loose screen is displayed
-            startScreen.setAttribute('class', 'lose');
-            header.textContent = 'Sorry, try again!';
-            startButton.textContent = 'Play Again!';
-            startScreen.style.display = '';
-            startButton.addEventListener('click', () => { // if a 'play again' button is clicked
-                gameReset(); //game reset function is called
-            });
+        const phraseLetters = document.querySelectorAll('.letter');
+        const guessedLetters = document.querySelectorAll('.show');
+        if(phraseLetters.length === guessedLetters.length) {
+            return true;
+        } else {
+            return false;
         }
-        if(letters.length === guesses.length){ // if all letters in a phrase are shown 'You Won!' screen is displayed
-            startScreen.setAttribute('class', 'win');
-            header.textContent = 'You Won!';
-            startButton.textContent = 'Play Again!';
-            startScreen.style.display = '';
-            startButton.addEventListener('click', () => { // if a 'play again' button is clicked
-                gameReset(); //game reset function is called
-            });
-        }
+
     }
 
     removeLife() {
-
+        const phraseLetters = document.querySelectorAll('.letter');
+        for( let i = 0; i < phraseLetters.length; i++ ) {
+            if(letter === phraseLetters[i].textContent) {
+                phraseLetters[i].className = 'letter show';
+            }
+        }
     }
 
     gameOver() {
