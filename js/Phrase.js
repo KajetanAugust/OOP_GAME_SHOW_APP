@@ -3,6 +3,9 @@
  * Phrase.js */
 
 
+const phraseLi = document.querySelectorAll('ul li'); //all phrase letters are selected
+
+
 class Phrase {
     constructor(phrase) {
         this.phrase = phrase.toLowerCase();
@@ -21,12 +24,24 @@ class Phrase {
         }
     }
 
-    checkLetter() {
+    checkLetter(letter) {
+        const chosenPhrase = this.phrase;
+            if( chosenPhrase.includes(letter)){
+                return true
+            }else {
+                return false
+            }
+        }
 
-    }
 
-    showMatchedLetter() {
+    showMatchedLetter(letter) {
+        const phraseLetters = document.querySelectorAll('.letter');
+        for( let i = 0; i < phraseLetters.length; i++ ) {
+            if(letter === phraseLetters[i].textContent) {
+                phraseLetters[i].className = 'letter show';
 
+            }
+        }
     }
 
 }

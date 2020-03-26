@@ -15,4 +15,8 @@ const logPhrase = (phrase) => {
 startButton.addEventListener('click', () => {
     game = new Game();
     game.startGame();
+
 });
+
+// game.activePhrase.checkLetter('a');
+// game.activePhrase.showMatchedLetter('a');
