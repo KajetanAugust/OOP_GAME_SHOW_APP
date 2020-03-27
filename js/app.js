@@ -36,7 +36,7 @@ resetButton.addEventListener('click',(e)=>{
     // addPhraseToDisplay(); //the new phrase is added to the display
     for( let i = 0; this.missed > 0; i++){ //reseting hearts and missed counter
         this.missed -= 1;
-        hearts[missed].innerHTML = '<img src="../images/liveHeart.png" height="35px" width="30px">';
+        hearts[missed].innerHTML = '<img src="./images/liveHeart.png" height="35px" width="30px">';
     };
     for(let i = 0; qwertyLetters.length > i; i++){  //reseting keyboard
         qwertyLetters[i].removeAttribute('class');
