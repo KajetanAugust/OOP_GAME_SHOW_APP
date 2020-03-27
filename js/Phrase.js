@@ -10,9 +10,10 @@ class Phrase {
     constructor(phrase) {
         this.phrase = phrase.toLowerCase();
     }
+
     addPhraseToDisplay() {
         const phraseToProcess = this.phrase.split('');// getRandomPhraseAsArray function is called and assigned to the const
-        for(let i = 0; i < phraseToProcess.length; i++)  { //loops through the letters and creates li elements
+        for (let i = 0; i < phraseToProcess.length; i++) { //loops through the letters and creates li elements
             const li = document.createElement('li');
             li.textContent = phraseToProcess[i];
             if (phraseToProcess[i] !== ' ') {
@@ -26,18 +27,18 @@ class Phrase {
 
     checkLetter(letter) {
         const chosenPhrase = this.phrase;
-            if( chosenPhrase.includes(letter)){
-                return true
-            }else {
-                return false
-            }
+        if (chosenPhrase.includes(letter)) {
+            return true
+        } else {
+            return false
         }
+    }
 
 
     showMatchedLetter(letter) {
         const phraseLetters = document.querySelectorAll('.letter');
-        for( let i = 0; i < phraseLetters.length; i++ ) {
-            if(letter === phraseLetters[i].textContent) {
+        for (let i = 0; i < phraseLetters.length; i++) {
+            if (letter === phraseLetters[i].textContent) {
                 phraseLetters[i].className = 'letter show';
             }
         }

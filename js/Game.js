@@ -3,8 +3,6 @@
  * Game.js */
 
 
-
-
 class Game {
     constructor() {
         this.missed = 0;
@@ -37,12 +35,12 @@ class Game {
         this.activePhrase = null;
     }
 
-    getRandomPhrase(){
-        return this.phrases[Math.floor(Math.random() * this.phrases.length )]
+    getRandomPhrase() {
+        return this.phrases[Math.floor(Math.random() * this.phrases.length)]
     }
 
     startGame() {
-        document.getElementById('overlay').style.display='none';
+        document.getElementById('overlay').style.display = 'none';
         const randomPhrase = game.getRandomPhrase();
         this.activePhrase = randomPhrase;
         randomPhrase.addPhraseToDisplay();
@@ -51,7 +49,7 @@ class Game {
     checkForWin() {
         const phraseLetters = document.querySelectorAll('.letter');
         const guessedLetters = document.querySelectorAll('.show');
-        if(phraseLetters.length === guessedLetters.length) {
+        if (phraseLetters.length === guessedLetters.length) {
             return true;
         } else {
             return false;
@@ -60,12 +58,12 @@ class Game {
     }
 
     removeLife() {
-            const hearts = document.querySelectorAll('.tries');
-            this.missed ++; //one point is added to missed variable
-            hearts[this.missed - 1].innerHTML = `<img src="./images/lostHeart.png" height="35px" width="30px">`; //one heart is lost
-            console.log(this.missed);
-            if(this.missed === 5){
-                this.gameOver(false);
+        const hearts = document.querySelectorAll('.tries');
+        this.missed++; //one point is added to missed variable
+        hearts[this.missed - 1].innerHTML = `<img src="images/lostHeart.png" height="35px" width="30px">`; //one heart is lost
+        console.log(this.missed);
+        if (this.missed === 5) {
+            this.gameOver(false);
         }
     }
 
@@ -74,13 +72,13 @@ class Game {
         const startScreen = document.getElementById('overlay');
         const header = document.querySelector('h2');
 
-        if(gameWon === false){   // if the all hearts are lost the you loose screen is displayed
+        if (gameWon === false) {   // if the all hearts are lost the you loose screen is displayed
             startScreen.setAttribute('class', 'lose');
             header.textContent = 'Sorry, try again!';
             startButton.textContent = 'Play Again!';
             startScreen.style.display = '';
         }
-        if(gameWon === true){ // if all letters in a phrase are shown 'You Won!' screen is displayed
+        if (gameWon === true) { // if all letters in a phrase are shown 'You Won!' screen is displayed
             startScreen.setAttribute('class', 'win');
             header.textContent = 'You Won!';
             startButton.textContent = 'Play Again!';
@@ -90,18 +88,18 @@ class Game {
 
 
     handleInteraction(button) {
-        if(button.disabled === false) {
+        if (button.disabled === false) {
             button.disabled = true;
             const letterCheck = this.activePhrase.checkLetter(button.textContent);
-            if(!letterCheck) {
+            if (!letterCheck) {
                 button.className = 'wrong';
                 this.removeLife();
             }
-            if(letterCheck) {
+            if (letterCheck) {
                 button.className = 'chosen';
                 this.activePhrase.showMatchedLetter(button.textContent);
                 const win = this.checkForWin();
-                if(win){
+                if (win) {
                     this.gameOver(true);
                 }
             }
