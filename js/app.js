@@ -27,6 +27,17 @@ keyboard.addEventListener('click', (e) => { //event listener listens for clicks
 
 });
 
+document.addEventListener('keydown', (event) => { //event listener listens for clicks
+    let click = event.key;
+    const qwertyLetters = document.querySelectorAll('#qwerty button');
+    for(let i = 0; i< qwertyLetters.length; i++) {
+        if(click === qwertyLetters[i].textContent) {
+            game.handleInteraction(qwertyLetters[i]);
+        }
+    }
+
+});
+
 
 resetButton.addEventListener('click', (e) => {
     let oldPhrase = document.querySelectorAll('ul li'); //old phrase is selected

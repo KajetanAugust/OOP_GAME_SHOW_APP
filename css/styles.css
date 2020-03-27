@@ -60,6 +60,11 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  border: 1px solid #FFC24A;
+  color: #193D40;
+}
+
 #btn__reset {
 	width: 200px;
 	margin: 0 auto;
@@ -86,7 +91,7 @@ button {
 /* Title */
 
 .header {
-  color: #3a3f58;
+  color: #3B76CC;
 }
 
 
@@ -111,7 +116,7 @@ button {
 
 .show {
   color: #fff;
-  background-color: #4ac0d5;
+  background-color: #70AAFF;
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -131,14 +136,14 @@ button {
 }
 
 .chosen {
-  background: #3a3f58;
+  background: #34AAB3;
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
 }
 
 .wrong {
-  background: #f7a964;
+  background: #FF8C7D;
   color: #FFFFFF;
 }
 
