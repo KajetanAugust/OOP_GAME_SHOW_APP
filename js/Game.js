@@ -62,8 +62,8 @@ class Game {
     removeLife() {
             const hearts = document.querySelectorAll('.tries');
             this.missed ++; //one point is added to missed variable
-            hearts[this.missed - 1].innerHTML = `<img src="../images/lostHeart.png" height="35px" width="30px">`; //one heart is lost
-    console.log(this.missed);
+            hearts[this.missed - 1].innerHTML = `<img src="./images/lostHeart.png" height="35px" width="30px">`; //one heart is lost
+            console.log(this.missed);
             if(this.missed === 5){
                 this.gameOver(false);
         }
@@ -94,7 +94,7 @@ class Game {
             button.disabled = true;
             const letterCheck = this.activePhrase.checkLetter(button.textContent);
             if(!letterCheck) {
-                button.className = 'missed';
+                button.className = 'wrong';
                 this.removeLife();
             }
             if(letterCheck) {
