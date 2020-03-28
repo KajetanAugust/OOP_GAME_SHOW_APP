@@ -103,7 +103,7 @@ class Game { //Game class
         }
         if (gameWon === true) { // if all letters in a phrase are shown 'You Won!' screen is displayed
             startScreen.setAttribute('class', 'win'); //setting class to win
-            header.textContent = 'You Won!'; //changing text to You Won!
+            header.textContent = 'Congratulations, you won!'; //changing text to You Won!
             startButton.textContent = 'Play Again!'; //changing the button content to Play Again
             startScreen.style.display = ''; //showing the screen
         }
